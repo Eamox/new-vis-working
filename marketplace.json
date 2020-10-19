@@ -1,0 +1,20 @@
+{
+  "label": "Multiple Value Visualization",
+  "category_label": "Plug-ins",
+  "branding": {
+    "image_uri": "https://marketplace-api.looker.com/visualization-screenshots/grouped_card_icon.png",
+    "tagline": "Use the Multiple Value visualization to display and compare multiple measures across a single tile. This visualization can be arranged horizontally or vertically."
+  },
+
+    "constants": {
+        "VIS_LABEL": {
+            "label": "Visualization Label",
+            "description": "This label will appear in the visualization selector in the Looker Explore UI."
+        },
+        "VIS_ID": {
+            "label": "Visualization ID",
+            "description": "This ID must be unique across all custom visualizations on your instance.",
+            "value_constraint": "visualization"
+        }
+    }
+}

@@ -143,8 +143,8 @@ class MultipleValue extends React.PureComponent {
                 <DataPoint 
                 titlePlacement={config[`title_placement_${firstPoint.name}`]}
                 headerColor = {config['header_text_color']}
-                headerBackground = {config/header_background}
-                headerSize = {config.header-text-size}
+                headerBackground = {config.header_background}
+                headerSize = {config.header_text_size}
                 >
                   {config[`show_title_${firstPoint.name}`] === false ? null : (
                     <DataPointTitle>

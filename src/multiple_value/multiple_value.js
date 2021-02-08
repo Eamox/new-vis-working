@@ -43,7 +43,7 @@ const DataPoint = styled.div`
   flex: 1;
   color: ${props => props.headerColor};
   background-color: ${props => props.headerBackground};
-  font-size: ${props => props.headerSize};
+  font-size: ${props => props.headerSize}em;
 `
 
 const DataPointTitle = styled.div`
@@ -136,7 +136,6 @@ class MultipleValue extends React.PureComponent {
         font={config['grouping_font']}
         style={{fontSize: `${this.state.fontSize}em`}}
       >
-  
               <>
               <DataPointGroup 
                 comparisonPlacement={config[`comparison_direction_${firstPoint.name}`]}
@@ -146,10 +145,7 @@ class MultipleValue extends React.PureComponent {
               >
                 <DataPoint 
                 titlePlacement={config[`title_placement_${firstPoint.name}`]}
-                color = {config['header_text_color']}
-                headerColor = {config['header_text_color']}
-                headerBackground = {config['header_background']}
-                headerSize = {config['header-text-size']}
+               
                 >
                   {config[`show_title_${firstPoint.name}`] === false ? null : (
                     <DataPointTitle color={config[`style_${firstPoint.name}`]}>

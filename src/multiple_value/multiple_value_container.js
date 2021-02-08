@@ -34,8 +34,7 @@ const baseOptions = {
     default: '#FFFFFF',
     section: 'Style',
     order: 0
-  }
-  ,
+  },
   header_text_color : {
     type: `string`,
     label: `Header Text Color`,
@@ -43,8 +42,7 @@ const baseOptions = {
     default: '#000000',
     section: 'Style',
     order: 0
-  }
-  ,
+  },
   header_text_size : {
     type: `string`,
     label: `Header Text Size`,
@@ -64,7 +62,7 @@ looker.plugins.visualizations.add({
   options: baseOptions,
   create: function(element, config) {
     this.chart = ReactDOM.render(
-    <MultipleValue
+      <MultipleValue
         config={{}}
         data={[]}
       />,

@@ -147,12 +147,11 @@ class MultipleValue extends React.PureComponent {
                 headerSize = {config.header-text-size}
                 >
                   {config[`show_title_${firstPoint.name}`] === false ? null : (
-                    <DataPointTitle color={config[`style_${firstPoint.name}`]}>
+                    <DataPointTitle>
                       {config[`title_overrride_${firstPoint.name}`] || firstPoint.label}
                     </DataPointTitle>
                   )}
                   <DataPointValue 
-                    color={config[`style_${firstPoint.name}`]}
                     onClick={() => { this.handleClick(firstPoint, event) }}
                     layout={config['orientation'] === 'auto' ? this.state.groupingLayout : config['orientation']}
                   >

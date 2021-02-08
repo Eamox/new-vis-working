@@ -44,23 +44,20 @@ const DataPoint = styled.div`
   color: ${props => props.headerColor};
   background-color: ${props => props.headerBackground};
   font-size: ${props => props.headerSize}em;
+  a.drillable-link {
+    color: ${props => props.headerColor};
+    text-decoration: none;
+  };
 `
 
 const DataPointTitle = styled.div`
   font-weight: 100;
-  color: ${props => props.color};
   margin: 5px 0;
 `
 
 const DataPointValue = styled.div`
   font-size: 3em;
   font-weight: 100;
-  color: ${props => props.color};
-
-  a.drillable-link {
-    color: ${props => props.color};
-    text-decoration: none;
-  }
   :hover {
     text-decoration: underline;
   }
@@ -145,10 +142,9 @@ class MultipleValue extends React.PureComponent {
               >
                 <DataPoint 
                 titlePlacement={config[`title_placement_${firstPoint.name}`]}
-                color = {config['header_text_color']}
                 headerColor = {config['header_text_color']}
-                headerBackground = {config['header_background']}
-                headerSize = {config['header-text-size']}
+                headerBackground = {config/header_background}
+                headerSize = {config.header-text-size}
                 >
                   {config[`show_title_${firstPoint.name}`] === false ? null : (
                     <DataPointTitle color={config[`style_${firstPoint.name}`]}>

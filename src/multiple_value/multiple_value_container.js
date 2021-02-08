@@ -46,10 +46,11 @@ const baseOptions = {
   header_text_size : {
     type: `string`,
     label: `Header Text Size`,
-    display: `color`,
-    default: '#3A4245',
+    default: "",
     section: 'Style',
-    order: 0
+    order: 0,
+    display_size: 'normal'
+
   }
 }
 
@@ -112,15 +113,6 @@ looker.plugins.visualizations.add({
     dataPoints.forEach((dataPoint, index) => {
       //Style -- apply to all
       if (index < 1) {
-     
-        options[`style_${dataPoint.name}`] = {
-          type: `string`,
-          label: `${dataPoint.label} - Color`,
-          display: `color`,
-          default: '#3A4245',
-          section: 'Style',
-          order: 10 * index + 1,
-        }
         options[`show_title_${dataPoint.name}`] = {
           type: 'boolean',
           label: `${dataPoint.label} - Show Title`,

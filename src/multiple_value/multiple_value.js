@@ -41,6 +41,9 @@ const DataPoint = styled.div`
   flex-shrink: ${props => props.layout === 'horizontal' ? 'auto' : 0 };
   flex-direction: ${props => props.titlePlacement === 'above' ? 'column' : 'column-reverse'};
   flex: 1;
+  color: ${props => props.headerColor};
+  background-color: ${props => props.headerBackground};
+  font-size: ${props => props.headerSize};
 `
 
 const DataPointTitle = styled.div`
@@ -141,7 +144,13 @@ class MultipleValue extends React.PureComponent {
                 //next line had the this.state
                 layout={config['orientation'] === 'auto' ? this.state.groupingLayout : config['orientation']}
               >
-                <DataPoint titlePlacement={config[`title_placement_${firstPoint.name}`]}>
+                <DataPoint 
+                titlePlacement={config[`title_placement_${firstPoint.name}`]}
+                color = {config['header_text_color']}
+                headerColor = {config['header_text_color']}
+                headerBackground = {config['header_background']}
+                headerSize = {config['header-text-size']}
+                >
                   {config[`show_title_${firstPoint.name}`] === false ? null : (
                     <DataPointTitle color={config[`style_${firstPoint.name}`]}>
                       {config[`title_overrride_${firstPoint.name}`] || firstPoint.label}

@@ -27,6 +27,32 @@ const baseOptions = {
     order: 0,
     display_size: 'normal'
   },
+  header_background : {
+    type: `string`,
+    label: `Header Background`,
+    display: `color`,
+    default: '#FFFFFF',
+    section: 'Style',
+    order: 0
+  }
+  ,
+  header_text_color : {
+    type: `string`,
+    label: `Header Text Color`,
+    display: `color`,
+    default: '#000000',
+    section: 'Style',
+    order: 0
+  }
+  ,
+  header_text_size : {
+    type: `string`,
+    label: `Header Text Size`,
+    display: `color`,
+    default: '#3A4245',
+    section: 'Style',
+    order: 0
+  }
 }
 
 let currentOptions = {}
@@ -38,7 +64,7 @@ looker.plugins.visualizations.add({
   options: baseOptions,
   create: function(element, config) {
     this.chart = ReactDOM.render(
-      <MultipleValue
+    <MultipleValue
         config={{}}
         data={[]}
       />,

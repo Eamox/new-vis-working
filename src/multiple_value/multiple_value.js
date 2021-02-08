@@ -11,6 +11,7 @@ const DataPointsWrapper = styled.div`
   align-items: center;
   margin: 10px;
   height: 100%;
+  background-color: ${props => props.headerBackground};
 `
 
 const dataPointGroupDirectionDict = {
@@ -42,7 +43,6 @@ const DataPoint = styled.div`
   flex-direction: ${props => props.titlePlacement === 'above' ? 'column' : 'column-reverse'};
   flex: 1;
   color: ${props => props.headerColor};
-  background-color: ${props => props.headerBackground};
   font-size: ${props => props.headerSize}em;
   width:100%;
   a.drillable-link {
@@ -133,6 +133,7 @@ class MultipleValue extends React.PureComponent {
         layout={config['orientation'] === 'auto' ? this.state.groupingLayout : config['orientation']}
         font={config['grouping_font']}
         style={{fontSize: `${this.state.fontSize}em`}}
+        headerBackground = {config['header_background']}
       >
               <>
               <DataPointGroup 
@@ -144,7 +145,6 @@ class MultipleValue extends React.PureComponent {
                 <DataPoint 
                 titlePlacement={config[`title_placement_${firstPoint.name}`]}
                 headerColor = {config['header_text_color']}
-                headerBackground = {config['header_background']}
                 headerSize = {config['header_text_size']}
                 >
                   {config[`show_title_${firstPoint.name}`] === false ? null : (

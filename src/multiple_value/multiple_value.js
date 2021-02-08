@@ -44,6 +44,7 @@ const DataPoint = styled.div`
   color: ${props => props.headerColor};
   background-color: ${props => props.headerBackground};
   font-size: ${props => props.headerSize}em;
+  width:100%;
   a.drillable-link {
     color: ${props => props.headerColor};
     text-decoration: none;

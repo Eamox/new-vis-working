@@ -72,17 +72,27 @@ const ComparisonProgressBar = styled.div.attrs({
   text-align: center;
 `
 const ComparisonProgressBarFilled = styled.div.attrs({
-  background: (props: any) => props.background,
   pct: (props: any) => props.pct,
 })`
   background-color: ${props => 
-    props.background ? lighten(props.background, 45) : lighten("#282828", 60)
+    props.color
   };
   width: ${props => 
     props.pct
   }%;
   height: 40px;
 `
+const ComparisonDateProgressBar = styled.div.attrs({
+  pct: (props: any) => props.pct,
+})`
+  background-color: black;
+  width: ${props => 
+    props.pct
+  }%;
+  height: 10px;
+`
+
+
 
 const ComparisonProgressBarLabel = styled.div`
   position: absolute;
@@ -135,9 +145,13 @@ export const ComparisonDataPoint: React.FC<{
     config[`comparison_style_${compDataPoint.name}`] !== 'calculate_progress_perc' ? null : (
       <ComparisonProgressBar background={config[`style_${dataPoint.name}`]}>
         <ComparisonProgressBarFilled
-          background={config[`style_${dataPoint.name}`]}
-          pct={()=>Math.min(progressPerc || 0, 100)}
+          color={percChange > 0? 'green' : 'red'}
         />
+        <ComparisonDateProgressBar pct = {() => {
+            var now = new Date();
+            var days_in = new Date(now.getFullYear(), now.getMonth()+1, 0).getDate();
+            return (now.getDate() / days_in)*100
+        }}/>
           {config[`comparison_show_label_${compDataPoint.name}`] === false ? null : (
             <ComparisonProgressBarLabel><div onClick={() => { handleClick(compDataPoint, event) }}>
               {config[`comparison_style_${compDataPoint.name}`] === 'calculate_progress' ? null :

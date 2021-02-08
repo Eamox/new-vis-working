@@ -145,7 +145,7 @@ export const ComparisonDataPoint: React.FC<{
     config[`comparison_style_${compDataPoint.name}`] !== 'calculate_progress_perc' ? null : (
       <ComparisonProgressBar background={config[`style_${dataPoint.name}`]}>
         <ComparisonProgressBarFilled
-        pct = {progressPerc}
+          pct={()=>Math.min(progressPerc || 0, 100)}
           color={percChange > 0? 'green' : 'red'}
         />
         <ComparisonDateProgressBar pct = {() => {

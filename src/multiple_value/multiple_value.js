@@ -52,7 +52,8 @@ const DataPoint = styled.div`
 `
 
 const DataPointTitle = styled.div`
-  font-weight: 100;
+  font-weight: bolder;
+  font-size: 38px;
   margin: 5px 0;
 `
 
